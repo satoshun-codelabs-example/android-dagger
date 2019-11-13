@@ -1,6 +1,7 @@
 package com.example.android.dagger.di
 
 import android.content.Context
+import com.example.android.dagger.main.MainActivity
 import com.example.android.dagger.registration.RegistrationActivity
 import com.example.android.dagger.storage.SharedPreferencesStorage
 import com.example.android.dagger.storage.Storage
@@ -17,6 +18,7 @@ interface AppComponent {
   }
 
   fun inject(activity: RegistrationActivity)
+  fun inject(activity: MainActivity)
 }
 
 @Module
