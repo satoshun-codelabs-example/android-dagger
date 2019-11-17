@@ -12,6 +12,7 @@ android {
     targetSdkVersion 29
     versionCode 1
     versionName "1.0"
+
     testInstrumentationRunner "com.example.android.dagger.MyCustomTestRunner"
   }
   buildTypes {
@@ -46,10 +47,11 @@ dependencies {
   kapt "com.google.dagger:dagger-compiler:$dagger_version"
 
   testImplementation 'junit:junit:4.12'
-  testImplementation 'org.mockito:mockito-core:2.25.0'
+  testImplementation 'org.mockito:mockito-core:2.28.2'
   testImplementation 'android.arch.core:core-testing:1.1.1'
 
   androidTestImplementation "androidx.test:runner:$androidx_test_version"
   androidTestImplementation "androidx.test:core-ktx:$androidx_test_version"
   androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+  kaptAndroidTest "com.google.dagger:dagger-compiler:$dagger_version"
 }

@@ -16,15 +16,17 @@
 
 package com.example.android.dagger.storage
 
-class FakeStorage : Storage {
+import javax.inject.Inject
 
-    private val map = mutableMapOf<String, String>()
+class FakeStorage @Inject constructor() : Storage {
 
-    override fun setString(key: String, value: String) {
-        map[key] = value
-    }
+  private val map = mutableMapOf<String, String>()
 
-    override fun getString(key: String): String {
-        return map[key].orEmpty()
-    }
+  override fun setString(key: String, value: String) {
+    map[key] = value
+  }
+
+  override fun getString(key: String): String {
+    return map[key].orEmpty()
+  }
 }
